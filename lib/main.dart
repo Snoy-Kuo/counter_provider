@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'colors_util.dart';
+
 void main() {
   runApp(
     ChangeNotifierProvider(
@@ -21,6 +23,11 @@ class Counter with ChangeNotifier {
     value += 1;
     notifyListeners();
   }
+
+  void decrement() {
+    value -= 1;
+    notifyListeners();
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Counter provider',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: createMaterialColor(Color(0xFFEE5354)),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Counter Provider'),
@@ -63,13 +70,30 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          var counter = context.read<Counter>();
-          counter.increment();
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          FloatingActionButton(
+            key: Key('main_increment_fab'),
+            onPressed: () {
+              var counter = context.read<Counter>();
+              counter.increment();
+            },
+            tooltip: 'Increment',
+            child: Icon(Icons.add),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            key: Key('main_decrement_fab'),
+            onPressed: () {
+              var counter = context.read<Counter>();
+              counter.decrement();
+            },
+            tooltip: 'Decrement',
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
