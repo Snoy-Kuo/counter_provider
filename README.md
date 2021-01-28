@@ -8,13 +8,10 @@ Counter App using Provider to manage state.
 
 ## Widgets/Classes/Libs
 
- - [Colors](https://api.flutter.dev/flutter/material/Colors-class.html)
- - [VisualDensity](https://api.flutter.dev/flutter/material/VisualDensity-class.html)
- - [StatefulWidget](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html)
- - [State](https://api.flutter.dev/flutter/widgets/State-class.html)
- - [Column](https://api.flutter.dev/flutter/widgets/Column-class.html)
- - [Theme](https://api.flutter.dev/flutter/material/Theme-class.html)
- - [FloatingActionButton](https://api.flutter.dev/flutter/material/FloatingActionButton-class.html)
+ - [provider](https://pub.dev/packages/provider)
+ - [ChangeNotifierProvider](https://pub.dev/documentation/provider/latest/provider/ChangeNotifierProvider-class.html)
+ - [ChangeNotifier](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html)
+ - [Consumer](https://pub.dev/documentation/provider/latest/provider/Consumer-class.html)
 
 ## Try
 
